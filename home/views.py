@@ -5,5 +5,5 @@ from . models import Entities
 
 def index(request):
     options = Entities.objects.all()
-    return render('index.html', {'items': options})
-    return HttpResponse('Welcome To PANGA',)
+    context = {'items': options}
+    return render(request, 'index.html', context)
